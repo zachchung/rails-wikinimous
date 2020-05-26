@@ -1,0 +1,29 @@
+<%= render "navbar" %>
+<div class="container p-2">
+
+  <div class="d-flex align-items-center">
+    <h1><%= @article.title %></h1>
+    <%= link_to edit_article_path(@article.id) do %> <i class="fas fa-pencil-alt m-2"></i> <% end %> <%# Edit icon %>
+    <%= link_to article_path(@article.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i> <%# Delete icon %>
+    <% end %>
+  </div>
+
+  <p class="card p-3"><%= @article.content %></p>
+
+  <%= link_to "Back to list", articles_path, class: "btn btn-info" %> <%# Back btn %>
+
+</div>
+
+
+
+
+<%# METHOD 1: DO!!!!!!!!!!!!!!!!!!! %>
+<%#= link_to article_path(@article.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <!-- <i class="far fa-trash-alt"></i> -->
+<%# end %>
+
+<%# METHOD 2: CLASS INSIDE (AVOID) %>
+<%#= link_to "", article_path(@article.id), method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %>
+
+
