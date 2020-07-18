@@ -1,2 +1,1 @@
 # Wikinimous
-library of knowledge
